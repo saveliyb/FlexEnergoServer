@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+</head>
+<body>
+    <h1 align="center" >VCG</h1>
+    <h5 align="center" >(между куполами)</h5>
+    <table width="100%" cellspacing="0" cellpadding="4" border="0">
+        {{table_vcg|safe}}
+    </table>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <h2 align="center">двойной непрерывный</h2>
+    <h5 align="center">(внутри куполов)</h5>
+    <table width="100%" cellspacing="0" cellpadding="4" border="0">
+        <tr>
+            {% for i in agent_list %}
+                <td>
+                    <h4>{{i | safe}}</h4>
+                </td>
+            {% endfor %}
+
+        </tr>
+        <tr>
+                {% for table in table_list %}
+                <td>
+                {{ table|safe }}
+                </td>
+                {% endfor %}
+        </tr>
+    </table>
+</body>
+
+
+{% endblock %}
